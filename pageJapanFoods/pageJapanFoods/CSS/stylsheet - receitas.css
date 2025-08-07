@@ -1,0 +1,636 @@
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --box-shadow:1px 0.5rem 0.5rem rgba(0, 0, 0, .1);
+}
+
+body{
+    margin: 0;
+    background-color: #fceae2;
+    overflow-x: hidden;
+}
+
+img{
+    user-select: none;
+}
+
+/* CABEÇALHO */
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #000000;
+    box-shadow: var(--box-shadow);
+}
+ 
+
+.cabecalho{
+    width: 100%;
+    max-width: 1500px;
+    min-height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.cabecalho::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 30%;
+    height: 2px;
+    margin-top: 75px;
+    background-color: #6b0c0c;
+    transform: translateX(-50%);
+}
+
+.icon-logo{
+    width: 100px;
+    height: 100px;
+}
+
+.cabecalho ul{
+    display: flex;
+    list-style: none;
+    margin-left: 100px;
+}
+
+.cabecalho ul li{
+    margin-right: 30px;
+}
+
+.cabecalho ul li a{
+    text-decoration: none;
+    color: #ffff;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 17px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* CABEÇALHO - HOVER */
+
+.cabecalho ul li a.active,
+.cabecalho ul li a:hover {
+    background: #6b0c0c;
+    color: #fff;
+    box-shadow: 3px 3px 9px 0px #00000040;
+}
+ 
+
+/* Botões - Entra e Cadastrar */
+
+input{
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.login{
+    background: transparent;
+    border: none;
+    color: #fff;
+}
+
+.registro{
+    background-color: #6b0c0c;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+}
+
+/* Corpo do Site */
+
+.corpo {
+    margin-top: 105px;
+    background: #ffb999;
+}
+
+/* Informação*/
+
+.informacao{
+    max-width: 1410px;
+    height: 450px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% auto;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Informação Texto */
+
+.informacao .informacao-text{
+    display: block;
+    width: 100%;
+}
+
+.informacao .informacao-text .info{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.informacao .informacao-text .info h2{
+    font-size: 60px;
+    font-family: sans-serif;
+    margin-bottom: 30px; 
+}
+
+.informacao .informacao-text .info p{
+    font-size: 20px;
+    line-height: 2pc;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+}
+
+/* Informação - Botão */
+
+.informacao .informacao-text .btn-info{
+    padding: 10px 23px;
+    background-color: #6b0c0c;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Informação - Foto */
+
+.informacao .informacao-foto{
+    display: block;
+    width: 100%;
+}
+
+.informacao .informacao-foto img{
+    width: 400px;
+    height: auto;
+    position: relative;
+    animation: rotacao 10s linear infinite;
+}
+
+/* Informação - Animação Foto */
+
+@keyframes rotacao {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* Cards - Receita */
+
+.categorias {
+    margin-bottom: 13%;
+}
+
+.receitas-populares {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-width: 1438px;
+    margin: 0 auto;
+}
+
+.categorias .lista-itens {
+    width: 90%;
+    margin-top: 30px;
+    margin-left: 10%;
+}
+
+.categorias .lista-itens h3 {
+    font-size: 25px;
+    font-weight: 600;
+    font-family: sans-serif;
+    margin-left: -70px;
+    margin-bottom: 230px;
+}
+
+.categorias .lista-itens h3::after{
+    content: '';
+    width: 10%;
+    height: 3px;
+    background-color: #c21437;
+    display: flex;
+    position: relative;
+    margin-left: 25px;
+    margin-top: 2px;
+}
+
+
+.categorias .lista-itens .itens-card {
+    margin-bottom: 83px;
+    transform: scale(0.9);
+}
+
+.categorias .itens-card .card{
+    width: 500px;
+    height: 300px;
+    padding: 3em;
+    position: absolute;
+    left: 5%;
+    transform: translate(-50%, -50%);
+}
+
+.card.primario{
+    margin-left: -10px;
+}
+      
+.categorias .itens-card .card::before,
+.categorias .itens-card .card::after{
+    content: "";
+    width: 0;
+    height: 0;
+    box-sizing: inherit;
+    margin-top: -5px;
+    margin-left: 10px;
+    margin-bottom: -30px;
+    border: 3px solid transparent;
+    position: absolute;
+}
+      
+.categorias .itens-card .card::before{
+    top: 0;
+    left: 0;
+}
+      
+.categorias .itens-card .card::after{
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+}
+      
+.categorias .itens-card .card:hover::before{
+    width: 100%;
+    height: 100%;
+}
+      
+.categorias .itens-card .card:hover::before{
+    border-top-color: #c21437;
+    border-right-color: #c21437;
+    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}   
+
+img.imagem_receita {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%) rotate(15deg);
+    z-index: 99;
+    width: 300px;
+    filter: drop-shadow(-10px 10px 13px #5a5550);
+}
+
+.categorias .itens-card .card .bloco-desc{
+    width: 120%;
+    height: 200px;
+    margin-top: -40px;
+}
+
+
+
+.categorias .itens-card .card .bloco-desc .titulo{
+    font-family: 'Knewave', cursive;
+    font-size: 32px;
+    color: #c21437;
+    margin-bottom: 50px;
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: all 1s;
+    z-index: 9;
+}
+.titulo > span{
+    font-size: 18px;
+    display:block;
+    color: #c21437;
+}
+.desc{
+    width: 195px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    color: #404040;
+    left: 0;
+    bottom: 2rem;
+    line-height: 1.8;
+    position: relative;
+    transition: all 1s;
+  }
+
+.categorias .itens-card .card:hover .bloco-desc .titulo,
+.categorias .itens-card .card:hover .bloco-desc .desc{
+    left: 47%;
+}
+
+/* Próximos Card's - Receita */
+
+.categorias .itens-card .card:nth-child(2)::before, .categorias .itens-card .card:nth-child(2)::after {
+    margin-left: 60px
+}
+    
+.card:nth-child(2) {
+    margin-left: 45%;
+}
+
+.card:nth-child(2) img.imagem_receita {
+    width: 335px;
+}
+    
+.categorias .itens-card .card:nth-child(2):hover .bloco-desc .titulo,
+.categorias .itens-card .card:nth-child(2):hover .bloco-desc .desc{
+    left: 56%;
+}
+
+.categorias .itens-card .card:nth-child(3)::before, .categorias .itens-card .card:nth-child(3)::after {
+    margin-left: 60px
+}
+    
+.card:nth-child(3) {
+    margin-left: 94%;
+}
+    
+.card:nth-child(3) img.imagem_receita {
+    width: 335px;
+}
+    
+.categorias .itens-card .card:nth-child(3):hover .bloco-desc .titulo,
+.categorias .itens-card .card:nth-child(3):hover .bloco-desc .desc{
+    left: 56%;
+} 
+ 
+/* Barra do Scroll */
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+    background-color: #6b0c0c;
+}
+
+/* RODAPE */
+
+.row-fluid {
+    background-color: #feb898;
+    width: 130%;
+    height: 25em;
+}
+
+.sub-opcoes {
+    max-width: 1500px;
+    margin: 0 auto;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    margin-left: 13%;
+}
+
+.direitos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right: 10%;
+}
+
+.logo-rodape {
+    margin-bottom: 15px;
+}
+
+.logo-rodape img {
+    width: 130px;
+    filter: drop-shadow(0px 1px 2px #5a5550);
+    border-radius: 35%;
+    margin-bottom: 10px;
+    user-select: none;
+}
+
+.logo-rodape h1 {
+    font-size: 13px;
+    font-family: system-ui;
+    font-weight: 500;
+}
+
+.social{
+    display: flex;
+}
+
+.social img {
+    width: 32px;
+    margin-right: 5px;
+}
+ 
+.sub-opcoes .quick .text-principal {
+    margin-bottom: 20%;
+    white-space: nowrap;
+}
+
+.sub-opcoes .text-principal span {
+    font-size: 20px;
+    font-family: cursive;
+}
+
+.sub-opcoes .opcoes-list {
+    display: grid;
+}
+
+.sub-opcoes .opcoes-list a {
+    text-decoration: none;
+    color: #000000ad;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+}
+
+.sub-opcoes .opcoes-list div{
+    color: #000000ad;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+}
+
+.quick {
+    margin-right: 10%;
+}
+
+.contatos .text-principal {
+    margin-bottom: 20px;
+}
+
+.sub-opcoes .opcoes-list .localizacao {
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+
+.sub-opcoes .opcoes-list .email {
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+
+.icon-contato {
+    margin-top: 4%;
+    margin-right: 17px;
+}
+
+.instagram .text-principal {
+    margin-bottom: 30px;
+}
+
+.contatos {
+    margin-right: -5%;
+}
+
+.fotos-insta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.fotos-insta img {
+    width: 82px;
+    border-radius: 10%;
+    filter: drop-shadow(0px 0px 3px #5a5550);
+    margin-right: -25px;
+}
+
+.fotos-insta li {
+    flex-basis: calc(25% - 10px);
+    list-style: none;
+}
+
+.instagram {
+    margin-top: 6%;
+}
+ 
+/* CSS - PAGINA RECEITAS */
+
+.corpo-receitas {
+    margin-top: 105px;
+}
+
+.receitas-topo{
+    max-width: 1410px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% auto;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.receitas-topo .receita-text{
+    display: block;
+    width: 100%;
+}
+
+.receitas-topo .receita-text .info{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.receitas-topo  .receita-text .info h2{
+    font-size: 40px;
+    font-family: sans-serif;
+    margin-top: 15px;
+}
+
+.receitas-topo  .receita-text .info p{
+    font-size: 20px;
+    line-height: 2pc;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+}
+
+
+.vitrine-normal{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.vitrine-normal .card{
+    width: 200px;
+    height: auto;
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    text-decoration: none;
+    color: black;
+    background: #ffdd5a;
+    outline: 2px solid #6b0c0c;
+    transition: transform 0.3s ease;
+}
+
+.vitrine-normal .card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 3px 3px 9px 1px #0000004d;
+}
+
+.vitrine-normal .card img{
+    width: 100px;
+    height: auto;
+    bottom: 170px;
+    left: 50px;
+    object-fit: cover;
+    object-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    filter: drop-shadow(0px 15px 13px #eba14d);
+    border-radius: 50%;
+    overflow: visible;
+}
+
+.vitrine-normal .card .titulo-receita{
+    padding: 40px 0 10px;
+}
+
+.vitrine-normal .card .titulo-receita h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+.vitrine-normal .desc-receita p{
+    font-size: 13px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+}
+
+.vitrine-normal .veja-mais{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.vitrine-normal .veja-mais .icon-veja{
+    color: #6b0c0c;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+ 
